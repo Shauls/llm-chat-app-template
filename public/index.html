@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="he" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LLM Chat App</title>
+    <title>שיחת בינה מלאכותית</title>
     <style>
       :root {
         --primary-color: #f6821f;
@@ -31,6 +31,7 @@
         max-width: 800px;
         margin: 0 auto;
         padding: 1rem;
+        direction: rtl;
       }
 
       header {
@@ -71,17 +72,18 @@
 
       .user-message {
         background-color: var(--user-msg-bg);
-        align-self: flex-end;
-        margin-left: auto;
+        align-self: flex-start;
+        margin-right: auto;
       }
 
       .assistant-message {
         background-color: var(--assistant-msg-bg);
-        align-self: flex-start;
+        align-self: flex-end;
       }
 
       .message-input {
         display: flex;
+        flex-direction: row-reverse;
         padding: 0.75rem;
         border-top: 1px solid var(--border-color);
         background-color: white;
@@ -95,10 +97,11 @@
         font-family: inherit;
         resize: none;
         min-height: 44px;
+        direction: rtl;
       }
 
       #send-button {
-        margin-left: 0.5rem;
+        margin-right: 0.5rem;
         padding: 0 1rem;
         background-color: var(--primary-color);
         color: white;
@@ -138,38 +141,35 @@
   </head>
   <body>
     <header>
-      <h1>Shmulik AI Chat</h1>
+      <h1>שמוליק AI</h1>
     </header>
 
     <div class="chat-container">
       <div id="chat-messages" class="chat-messages">
         <div class="message assistant-message">
-          <p>
-            שלום קוראים לי שמוליק , איף אוכל לעזור לך היום ?
-          </p>
+          <p>שלום, קוראים לי שמוליק. איך אפשר לעזור?</p>
         </div>
       </div>
 
       <div class="typing-indicator" id="typing-indicator">
-        רגע אני חושב
+        רגע, אני חושב...
       </div>
 
       <div class="message-input">
         <textarea
           id="user-input"
-          placeholder="Type your message here..."
+          placeholder="הקלד את ההודעה שלך כאן..."
           rows="1"
           autofocus
         ></textarea>
-        <button id="send-button">Send</button>
+        <button id="send-button">שלח</button>
       </div>
     </div>
 
     <footer>
-      <p>MagmaNet AI Chat custom &copy; 2025</p>
+      <p>שירות בינה מלאכותית - מגמה נט &copy; 2025</p>
     </footer>
 
-    <!-- Chat app script -->
     <script src="chat.js"></script>
   </body>
 </html>
